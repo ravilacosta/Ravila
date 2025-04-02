@@ -15,7 +15,7 @@
         <div class="logo">
             <h1>Case Store</h1>
         </div>
-        <nav>
+        <nav class="menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="produtos.html">Produtos</a></li>
@@ -28,6 +28,70 @@
             <span id="cart-count">0</span>
         </div>
     </header>
-    
+    <main>
+        <!--corpo, produtos-->
+        <section class="produtos">
+            <div class="product-card">
+            <img src="assets/bischocolate.jpg">
+            <h3> Chocolate Bis</h3>
+            <p class="price">R$15,00</p>
+            <p class="description">
+                Chocolate Bis ao Leite 100,8g Lacta
+            </p>
+            <button class="btn btn-primary" onclick="openModal1(1,'Chocolate Bis', 15.00,'assets/bischocolate.jpg')">comprar</button>
+            </div>
+
+            <div class="product-card">
+                <img src="assets/lacreme.jpg">
+                <h3> Chocolate La Creme</h3>
+                <p class="price">R$25,00</p>
+                <p class="description">
+                    Barras de Chocolate La Creme 100g
+                </p>
+                <button class="btn btn-primary"   onclick="openModal1(1,'Barra de Chocolate La Creme' , 25.00,'assets/lacreme.jpg')">comprar</button>
+                </div>
+     
+                <div class="product-card">
+                    <img src="assets/mixdechocolates.webp">
+                    <h3> Mix de Barras de chocolates</h3>
+                    <p class="price">R$59,00</p>
+                    <p class="description">
+                        Chocolate Lovers
+                    </p>
+                    <button  class="btn btn-primary"  onclick="openModal1(1,'Chocolate Lovers', 59.00, 'assets/mixdechocolates.webp')">comprar</button>
+                    </div>
+        </section>
+
+       <div id="quantidade-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-product-details">
+                <img id="modal-product-image" src=""alt="">
+                <h3 id="modal-product-name"></h3>
+                <p id="modal-product-price"></p>
+              </div>
+            <h3>Slecione a Quantidade </h3>
+            <div class="quantity-selector">
+                <button class="bnt btn-primary" onclick="descrementQuantity()"></button>
+                <span id="quantity">1</span>
+                <button class="bnt btn-primary" onclick="incrementQuantity()">+</button>
+
+            </div>
+            <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+        </div>
+
+       </div>
+
+    </main>
+  <!--Rodapé-->
+
+
+    <footer>
+               <p> &copy; 2025 Cacau Store</p>
+    </footer>
+    <script src="js/script.js"></script>
+
+
+
+
 </body>
 </html>
