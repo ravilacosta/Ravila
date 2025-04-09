@@ -253,3 +253,26 @@ function showToast(message) {
         toast.className = 'toast';
     }, 3000);
 }
+
+// Seleciona o formulário de busca e os produtos
+const searchForm = document.querySelector('#search-form');
+const searchInput = document.querySelector('#search-input');
+const productCards = document.querySelectorAll('.product-card');
+
+// Adiciona um evento ao formulário de busca
+searchForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Evita o envio do formulário
+
+    const query = searchInput.value.trim().toLowerCase(); // Obtém o termo de busca em letras minúsculas
+
+    // Filtra os produtos com base no termo de busca
+    productCards.forEach((card) => {
+        const productName = card.getAttribute('data-name'); // Obtém o atributo data-name
+
+        if (productName && productName.toLowerCase().includes(query)) {
+            card.style.display = 'block'; // Mostra o produto se corresponder à busca
+        } else {
+            card.style.display = 'none'; // Esconde o produto se não corresponder
+        }
+    });
+});
